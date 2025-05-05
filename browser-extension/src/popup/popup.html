@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Price Tracker</title>
+  <link rel="stylesheet" href="../styles/popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Price Tracker</h1>
+      <button id="settings-btn">⚙️</button>
+    </header>
+    
+    <div class="product-info">
+      <img id="product-image" src="" alt="Product Image">
+      <h2 id="product-name"></h2>
+      <div class="price-container">
+        <span id="current-price"></span>
+        <span id="original-price" class="strikethrough"></span>
+      </div>
+    </div>
+    
+    <div class="controls">
+      <button id="track-btn">Track This Product</button>
+      <button id="view-tracked">View Tracked Items</button>
+    </div>
+    
+    <div class="price-history" id="price-chart"></div>
+  </div>
+  <script src="../dist/popup.js"></script>
+</body>
+</html>

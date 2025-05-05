@@ -1,0 +1,16 @@
+{% extends "email/base.html" %}
+
+{% block title %}Price Alert: {{ product_name }}{% endblock %}
+
+{% block content %}
+    <h2>Price Alert!</h2>
+    <p>The price for <strong>{{ product_name }}</strong> has dropped to <strong>${{ current_price }}</strong>, 
+    which is below your target price of <strong>${{ target_price }}</strong>.</p>
+    
+    <div style="text-align: center; margin: 20px 0;">
+        <a href="{{ product_url }}" class="button">View Product</a>
+    </div>
+    
+    <p>Happy shopping!</p>
+    <p>- The Price Tracker Team</p>
+{% endblock %}

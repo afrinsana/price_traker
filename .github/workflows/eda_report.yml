@@ -1,0 +1,23 @@
+name: Generate EDA Report
+on: [push]
+jobs:
+  eda:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: |
+          pip install pandas matplotlib sqlalchemy jupyter
+      - name: Run EDA Notebook
+        run: |
+          jupyter nbconvert --execute notebooks/price_analysis.ipynb --to html --output-dir reports/
+      - name: Upload Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: eda-report
+          path: reports/price_analysis.html
+          
